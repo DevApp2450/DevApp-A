@@ -21,28 +21,35 @@
     <!-- endbuild -->
   </head>
   <body class="metro" ng-app="">
-    <nav class="navigation-bar dark">
-    <nav class="navigation-bar-content">
-      <div class="element">
-        <a class="dropdown-toggle" href="#">DevApp</a>
-        <ul class="dropdown-menu" data-role="dropdown">
-          <li><a href="#">Main</a></li>
-        </ul>
-      </div>
-      <span class="element-divider"></span>
-      <a class="element brand" href="#"><span class="icon-github-2"> GitHub Organization</span></a>
-      <span class="element-divider"></span>
-      <a class="element brand" href="#"><span class="icon-github"> GitHub User</span></a>
-    </nav>
-    </nav>
+    <div class="btn-group btn-group-justified blocks">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            DevApp <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+              ...
+            </ul>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Repo Group</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Repo User</button>
+        </div>
+    </div>
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="col-md-4 pad-col">
         <div class="panel">
           <div class="panel-header">Development</div>
           <div class="panel-content">
-            <button><i class="icon-cube on-left"></i>Create New Project</button>
-            <button><i class="icon-plus on-left"></i>Add Existing Project</button>
+            <div class="btn-group-vertical">
+              <button type="button" class="btn btn-default">Create New Project</button>
+              <button type="button" class="btn btn-default">Work on Existing Project</button>
+              <button type="button" class="btn btn-default">Migrate Host</button>
+              <li class="label label-default">Current Project: 4.0</li>
+              <li class="label label-primary">Current Build: 190</li>
+            </div>
           </div>
         </div>
       </div>
@@ -50,6 +57,11 @@
         <div class="panel">
           <div class="panel-header">Stage</div>
           <div class="panel-content">
+            <div class="btn-group-vertical">
+              <button type="button" class="btn btn-default">Pull From Dev</button>
+              <li class="label label-default">Current Project: 4.0</li>
+              <li class="label label-primary">Current Build: 189</li>
+            </div>
           </div>
         </div>
       </div>
@@ -57,6 +69,11 @@
         <div class="panel">
           <div class="panel-header">Production</div>
           <div class="panel-content">
+             <div class="btn-group-vertical">
+              <button type="button" class="btn btn-default">Pull From Stage</button>
+              <li class="label label-default">Current Project: 3.5</li>
+              <li class="label label-primary">Current Build: 689</li>
+             </div>
           </div>
         </div>
       </div>
