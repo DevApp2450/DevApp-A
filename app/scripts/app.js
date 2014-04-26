@@ -1,20 +1,19 @@
 'use strict';
 
-angular.module('testingApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
-  .config(function ($routeProvider, $locationProvider) {
+angular
+  .module('devAppAApp', [
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
+  ])
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-      
-    $locationProvider.html5Mode(true);
   });
