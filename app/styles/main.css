@@ -41,6 +41,10 @@ body {
   margin: 30px 0;
 }
 
+.Dans-Form {
+   max-width: 270px;
+}
+
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
