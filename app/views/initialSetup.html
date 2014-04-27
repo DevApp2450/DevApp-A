@@ -18,15 +18,15 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword3" class="col-sm-2 control-label">User Name</label>
+    <label for="inputUserName" class="col-sm-2 control-label">User Name</label>
     <div class="col-sm-10">
-      <input type="password" class="Dans-Form  form-control" id="inputPassword3" placeholder="Repo User Name">
+      <input type="text" class="Dans-Form  form-control" id="inputPassword3" placeholder="Repo User Name">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-10">
-      <input type="email" class="Dans-Form  form-control" id="inputEmail3" placeholder="Repo Password">
+      <input type="password" class="Dans-Form  form-control" id="inputEmail3" placeholder="Repo Password">
     </div>
   </div>
   <div class="form-group">
@@ -41,7 +41,7 @@
       <input type="email" class="Dans-Form  form-control" id="inputEmail3" placeholder="Shared Folder Location">
     </div>
   </div>
-    <button type="button" class="btn btn-primary" ng-click="closeThisDialog()" style:"float right">Save</button>
+    <button type="button" class="btn btn-primary" ng-submit="saveAndCloseDialog()" style:"float right">Save</button>
     <button type="button" class="btn btn-danger" ng-click="closeThisDialog()">Cancel</button>
   </div>
   </body>
