@@ -11,7 +11,7 @@
   <nav class="navbar navbar-default">
     <nav class="navigation-bar-content">
       <div class="element">
-        <a class="dropdown-toggle" href="#">DevApp</a>
+        <a class="dropdown-toggle" href="#" ng-click="initialSetup()">DevApp</a>
         <ul class="dropdown-menu" data-role="dropdown">
           <li><a href="#">Main</a></li>
         </ul>
@@ -30,9 +30,9 @@
           <div class="panel-content">
             <button ng-click="newProject()"><i class="icon-cube on-left"></i>Create New Project</button>
 			<br />
-            <button><i class="icon-plus on-left"></i>Add Existing Project</button>
+            <button ng-click="addExisting()"><i class="icon-plus on-left"></i>Add Existing Project</button>
 			<br />
-			<button><i class = "icon-plus on-left"></i>Migrate Hosts</button>
+			<button ng-click="migrate()"><i class = "icon-plus on-left"></i>Migrate Hosts</button>
 			<br />
 			<hr>
 			Current Build:

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Create New Project</title>    
+  </head>
+  <body ng-app="devAppAApp">
+    <div class="container" style="height: 400px; width:1000px;">
+    <header>Create New Project</header>
+    <div ng-controller="initialSetupCtrl">
+    <select ng-model="option" ng-options="o.name for o in options" class="form-control" style="width: 380px;">
+	</select>
+	</div>
+    <button type="button" class="btn btn-primary" ng-click="closeThisDialog()">Close</button>
+  </div>
+  </body>
+</html>
