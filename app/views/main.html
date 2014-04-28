@@ -6,69 +6,186 @@
   </ul>
   <h3 class="text-muted">DevApp A</h3>
 </div>-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- build:css styles/vendor.css -->
+<!-- bower:css -->
+<link rel="stylesheet"
+	href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="../bower_components/ngDialog/css/ngDialog.css" />
+<link rel="stylesheet"
+	href="../bower_components/ngDialog/css/ngDialog-theme-default.css" />
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:css({.tmp,app}) styles/main.css -->
+<link rel="stylesheet" href="../styles/main.css">
+<!-- endbuild -->
+</head>
 
-<div class="container">
-  <nav class="navbar navbar-default">
-    <nav class="navigation-bar-content">
-      <div class="element">
-        <a class="dropdown-toggle" href="#">DevApp</a>
-        <ul class="dropdown-menu" data-role="dropdown">
-          <li><a href="#">Main</a></li>
-        </ul>
-      </div>
-      <span class="divider"></span>
-      <a class="element brand" href="#"><span class="icon-github-2"> GitHub Organization</span></a>
-      <span class="element-divider"></span>
-      <a class="element brand" href="#"><span class="icon-github"> GitHub User</span></a>
-   </nav>
-    </nav>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-md-4 pad-col">
-        <div class="panel panel-default">
-          <div class="panel-header">Development</div>
-          <div class="panel-content">
-            <button ng-click="VM"><i class="icon-cube on-left"></i>Create New Project</button>
-			<br />
-            <button><i class="icon-plus on-left"></i>Add Existing Project</button>
-			<br />
-			<button><i class = "icon-plus on-left"></i>Migrate Hosts</button>
-			<br />
-			<hr>
-			Current Build:
-			<br />
-			Current Project:
-			
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 pad-col">
-        <div class="panel">
-          <div class="panel-header">Stage</div>
-          <div class="panel-content">
-			<button><i class = "icon-plus on left"></i>Pull From Development</button>
-			<br />
-			<hr>
-			Current Build:
-			<br />
-			Current Project:
-			
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 pad-col">
-        <div class="panel">
-          <div class="panel-header">Production</div>
-          <div class="panel-content">
-			<button><i class = "icon-plus on left"></i>Pull From Stage</button>
-			<br />
-			<hr>
-			Current Build:
-			<br />
-			Current Project:
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<body>
+	<div class="container" style="height: 0px">
+
+		<nav ng-controller="MainCtrl" class="navbar navbar-default">
+
+			<div class="container-fluid">
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown">
+						<a class="dropdown-toggle"
+							data-toggle="dropdown">DevApp <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#" ng-click="initialSetup()">Setup</a></li>
+								<li><a href="#" ng-click="newProject()">Create a New Project</a></li>
+								<li><a href="#" ng-click="addExisting()">Import Existing Project</a></li>
+								<li><a href="#" ng-click="migrate()">Migrate Host</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Pull from Repository</a></li>
+								<li><a href="#">Make a Commit</a></li>
+								<li><a href="#">Push to Repository</a></li>
+							</ul></li>
+
+						<li><a href="#">GitHub Organizaiton</a></li>
+
+						<li><a href="#">GitHub User</a></li>
+
+					</ul>
+
+				</div>
+				<!-- /.navbar-collapse -->
+
+			</div>
+			<!-- /.container-fluid -->
+
+		</nav>
+
+		<div class="container-fluid">
+
+			<div class="row-fluid">
+
+				<div class="col-md-4 pad-col">
+
+					<div class="panel panel-default">
+
+						<div class="panel-heading">
+							<h3 class="panel-title">Development</h3>
+						</div>
+
+						<div class="panel-content">
+							<button ng-click="newProject()" class="btn btn-default dsp-btn">
+								<i class="icon-cube on-left"></i>Create New Project
+							</button>
+							<br />
+							<button ng-click="addExisting()" class="btn btn-default dsp-btn">
+								<i class="icon-plus on-left"></i>Add Existing Project
+							</button>
+							<br />
+							<button ng-click="migrate()" class="btn btn-default dsp-btn">
+								<i class="icon-plus on-left"></i>Migrate Hosts
+							</button>
+							<br />
+							<hr>
+							Current Build: <br /> Current Project:
+						</div>
+					</div>
+
+				</div>
+				
+				<div class="col-md-4 pad-col">
+
+					<div class="panel panel-default">
+
+						<div class="panel-heading">
+							<h3 class="panel-title">Stage</h3>
+						</div>
+
+						<div class="panel-content">
+							<button class="btn btn-default dsp-btn">
+								<i class="icon-plus on left"></i>Pull From Development
+							</button>
+							<br />
+							<hr>
+							Current Build: <br /> Current Project:
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-4 pad-col">
+
+					<div class="panel panel-default">
+
+						<div class="panel-heading">
+						<h3 class="panel-title">Production</h3>
+						</div>
+
+						<div class="panel-content">
+							<button class="btn btn-default dsp-btn">
+								<i class="icon-plus on left"></i>Pull From Stage
+							</button>
+							<br />
+							<hr>
+							Current Build: <br /> Current Project:
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+
+	<!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../bower_components/angular-resource/angular-resource.js"></script>
+	<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="../bower_components/angular-route/angular-route.js"></script>
+	<script src="../bower_components/ngDialog/js/ngDialog.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="../scripts/app.js"></script>
+	<script src="../scripts/controllers/main.js"></script>
+	<script src="../scripts/controllers/newProject.js"></script>
+	<!-- endbuild -->
+</body>
