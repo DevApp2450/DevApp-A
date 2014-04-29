@@ -5,10 +5,7 @@ angular.module('devAppAApp')
   	 $scope.repo = {url: 'http://'};	 
     	$scope.options = [
 		    {name:'Github'},
-		    /*{name:'white'},
-		    {name:'red'},
-		    {name:'blue'},
-		    {name:'yellow'}*/
+		    {name:'Bitbucket'}
 		  ];
 		  $scope.option = $scope.options[0]; //Github
 

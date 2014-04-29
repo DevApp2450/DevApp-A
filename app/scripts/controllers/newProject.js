@@ -6,7 +6,7 @@ angular.module('devAppAApp')
     	$scope.options = [
 		    {name:'WordPress'},
 		    {name:'GoDaddy'},
-		    {name:'Something Random'},
+		    {name:'Something Random'}
 		    /*{name:'white'},
 		    {name:'red'},
 		    {name:'blue'},
