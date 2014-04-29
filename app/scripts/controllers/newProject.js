@@ -11,7 +11,7 @@ angular.module('devAppAApp')
 		    {name:'blue'},
 		    {name:'yellow'}*/
 		  ];
-		  $scope.option = $scope.options[0]; //Github
+		  $scope.option = $scope.options[0]; //Wordpress
 
 		  $scope.closeThisDialog = function() {
 		  	ngDialog.close();

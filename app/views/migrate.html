@@ -6,14 +6,18 @@
 </head>
 <body ng-app="devAppAApp">
 	<div class="container" style="height: 400px; width: 1000px;">
-		<header>Select New Host</header>
+		<header>Migrate To New Host</header>
+		<br />
 		<div ng-controller="migrateCtrl">
-			<select ng-model="option" ng-options="o.name for o in options"
+			Host:<select ng-model="option" ng-options="o.name for o in options"
 				class="form-control" style="width: 380px;">
 			</select>
+			<br />
+			Repo URL: <input type="text" name="repoURL" ng-model="repo.url" style="width: 300px;">
 		</div>
+		<br />
 		<button type="button" class="btn btn-primary"
-			ng-click="closeThisDialog()">Close</button>
+			ng-click="closeThisDialog()">Select</button>
 	</div>
 </body>
 </html>

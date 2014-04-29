@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('devAppAApp')
-  .controller('addExistingCtrl', function ($scope, ngDialog) {   	
+  .controller('addExistingCtrl', function ($scope, ngDialog) {   
+   $scope.repo = {url: 'http://'};	
     	$scope.options = [
 		    {name:'Github'},
 		    /*{name:'white'},
