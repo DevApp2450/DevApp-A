@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('devAppAApp')
-  .controller('newProjectCtrl', function ($scope, ngDialog) {   	
+  .controller('newProjectCtrl', function ($scope, ngDialog) {  
+  $scope.repo = {url: 'http://'};	 	
     	$scope.options = [
 		    {name:'WordPress'},
 		    {name:'GoDaddy'},

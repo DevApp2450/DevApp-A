@@ -2,6 +2,7 @@
 
 angular.module('devAppAApp')
   .controller('migrateCtrl', function ($scope, ngDialog) {   	
+  	 $scope.repo = {url: 'http://'};	 
     	$scope.options = [
 		    {name:'Github'},
 		    /*{name:'white'},
