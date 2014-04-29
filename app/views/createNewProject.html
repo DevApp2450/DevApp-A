@@ -7,11 +7,13 @@
   <body ng-app="devAppAApp">
     <div class="container" style="height: 400px; width:1000px;">
     <header>Create New Project</header>
+    <br />
     <div ng-controller="newProjectCtrl">
     <select ng-model="option" ng-options="o.name for o in options" class="form-control" style="width: 380px;">
 	</select>
 	</div>
-    <button type="button" class="btn btn-primary" ng-click="closeThisDialog()">Close</button>
+  <br />
+    <button type="button" class="btn btn-primary" ng-click="closeThisDialog()">Select</button>
   </div>
   </body>
 </html>

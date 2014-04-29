@@ -3,7 +3,9 @@
 angular.module('devAppAApp')
   .controller('newProjectCtrl', function ($scope, ngDialog) {   	
     	$scope.options = [
-		    {name:'Github'},
+		    {name:'WordPress'},
+		    {name:'GoDaddy'},
+		    {name:'Something Random'},
 		    /*{name:'white'},
 		    {name:'red'},
 		    {name:'blue'},
