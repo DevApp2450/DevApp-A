@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('devAppAApp')
+angular.module('devAppApp')
   .controller('migrateCtrl', function ($scope, ngDialog) {   	
   	 $scope.repo = {url: 'http://'};	 
     	$scope.options = [

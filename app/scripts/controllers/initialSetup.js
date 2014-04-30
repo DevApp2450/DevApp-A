@@ -1,15 +1,12 @@
 'use strict';
 
-angular.module('devAppAApp')
+angular.module('devAppApp')
   .controller('initialSetupCtrl', function ($scope, ngDialog) {   	
-    	$scope.options = [
-		    {name:'Github'},
-		    /*{name:'white'},
-		    {name:'red'},
-		    {name:'blue'},
-		    {name:'yellow'}*/
-		  ];
-		  $scope.option = $scope.options[0]; //Github
+    	
+		  $scope.saveAndCloseDialog = function() {
+		  	ngDialog.close();
+
+		  }
 
 		  $scope.closeThisDialog = function() {
 		  	ngDialog.close();
