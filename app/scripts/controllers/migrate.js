@@ -4,8 +4,9 @@ angular.module('devAppAApp')
   .controller('migrateCtrl', function ($scope, ngDialog) {   	
   	 $scope.repo = {url: 'http://'};	 
     	$scope.options = [
-		    {name:'Github'},
-		    {name:'Bitbucket'}
+		    {name:'WordPress'},
+		    {name:'GoDaddy'},
+		    {name:'Something Random'}
 		  ];
 		  $scope.option = $scope.options[0]; //Github
 
