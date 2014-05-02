@@ -1,20 +1,21 @@
 'use strict';
 
-angular
-  .module('devAppAApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute',
-    'ngDialog'
-  ])
-  .config(function ($routeProvider) {
+angular.module('devAppAeApp', [
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute',
+  'ngDialog'
+])
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
+      
+    
   });

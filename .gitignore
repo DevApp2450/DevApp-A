@@ -1,7 +1,8 @@
 node_modules
-dist
+public
 .tmp
 .sass-cache
 app/bower_components
-app/images/Thumbs.db
-app/Thumbs.db
+heroku
+/views
+dist

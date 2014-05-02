@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('devAppAApp')
+angular.module('devAppAeApp')
   .controller('newProjectCtrl', function ($scope, ngDialog) {  
   $scope.repo = {url: 'http://'};	 	
     	$scope.options = [

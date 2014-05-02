@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('devAppAApp')
+angular.module('devAppAeApp')
   .controller('addExistingCtrl', function ($scope, ngDialog) {   
    $scope.repo = {url: 'http://'};	
     	$scope.options = [
