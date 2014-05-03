@@ -14,7 +14,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+
+  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box" #http://files.vagrantup.com/precise32.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -118,4 +119,91 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+
+  dir = Dir.pwd
+  vagrant_dir = File.expand_path(File.dirname(__FILE__))
+
+
+  # Store the current version of Vagrant for use in conditionals when dealing
+  # with possible backward compatible issues.
+  vagrant_version = Vagrant::VERSION.sub(/^v/, '')
+
+  # Configurations from 1.0.x can be placed in Vagrant 1.1.x specs like the following.
+  config.vm.provider :virtualbox do |v|
+    v.customize ["modifyvm", :id, "--memory", 512]
+  end
+
+  # Forward Agent
+  #
+  # Enable agent forwarding on vagrant ssh commands. This allows you to use identities
+  # established on the host machine inside the guest. See the manual for ssh-add
+  config.ssh.forward_agent = true
+
+  config.vm.hostname = "vvv"
+
+  # Local Machine Hosts
+  #
+  # If the Vagrant plugin hostsupdater (https://github.com/cogitatio/vagrant-hostsupdater) is
+  # installed, the following will automatically configure your local machine's hosts file to
+  # be aware of the domains specified below. Watch the provisioning script as you may be
+  # required to enter a password for Vagrant to access your hosts file.
+  #
+  # By default, we'll include the domains setup by VVV through the vvv-hosts file
+  # located in the www/ directory.
+  #
+  # Other domains can be automatically added by including a vvv-hosts file containing
+  # individual domains separated by whitespace in subdirectories of www/.
+  if defined? VagrantPlugins::HostsUpdater
+
+    # Capture the paths to all vvv-hosts files under the www/ directory.
+    paths = []
+    Dir.glob(vagrant_dir + '/www/**/vvv-hosts').each do |path|
+      paths << path
+    end
+
+    # Parse through the vvv-hosts files in each of the found paths and put the hosts
+    # that are found into a single array.
+    hosts = []
+    paths.each do |path|
+      new_hosts = []
+      file_hosts = IO.read(path).split( "\n" )
+      file_hosts.each do |line|
+        if line[0..0] != "#"
+          new_hosts << line
+        end
+      end
+      hosts.concat new_hosts
+    end
+
+    # Pass the final hosts array to the hostsupdate plugin so it can perform magic.
+    config.hostsupdater.aliases = hosts
+
+  end
+
+  # Default Box IP Address
+  #
+  # This is the IP address that your host will communicate to the guest through. In the
+  # case of the default `192.168.50.4` that we've provided, Virtualbox will setup another
+  # network adapter on your host machine with the IP `192.168.50.1` as a gateway.
+  #
+  # If you are already on a network using the 192.168.50.x subnet, this should be changed.
+  # If you are running more than one VM through Virtualbox, different subnets should be used
+  # for those as well. This includes other Vagrant boxes.
+  config.vm.network :private_network, ip: "192.168.50.4" #*config.vm.synced_folder ".", "/home/core/share", id: "core", :nfs => true, :mount_options => ['nolock,vers=3,udp']*
+
+  #Install docker
+  config.vm.provision :shell, :inline => "sudo apt-get update"
+  config.vm.provision :shell, :inline => "sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring -y"
+  config.vm.provision :shell, :inline => "sudo apt-get install curl -y"
+  config.vm.provision :shell, :inline => "curl -s https://get.docker.io/ubuntu/ | sudo sh"
+  config.vm.provision :shell, :inline => "sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker" 
+  config.vm.provision :shell, :inline => "sudo docker run -i -t ubuntu /bin/bash"
+  #&& sudo apt-get install docker.io && sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker"
+
+  #Get Docker Container
+  #docker pull ubuntu
+
+  #Create Container
+  #docker run -name="dev" -t -i ubuntu /bin/bash
+
 end
