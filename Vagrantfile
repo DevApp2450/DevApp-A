@@ -10,12 +10,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise32"
-
+  config.vm.box = "Boot2Docker"
+  
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
 
-  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box" #http://files.vagrantup.com/precise32.box"
+  config.vm.box_url = "https://github.com/mitchellh/boot2docker-vagrant-box/releases/download/v0.8.0/boot2docker_virtualbox.box"
+  #"https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-i386-vagrant-disk1.box" #http://files.vagrantup.com/precise32.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -124,6 +125,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   vagrant_dir = File.expand_path(File.dirname(__FILE__))
 
 
+
+
   # Store the current version of Vagrant for use in conditionals when dealing
   # with possible backward compatible issues.
   vagrant_version = Vagrant::VERSION.sub(/^v/, '')
@@ -140,6 +143,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.forward_agent = true
 
   config.vm.hostname = "vvv"
+
+  #PortForwarding
+  #config.vm.forward_port 80, 8880
 
   # Local Machine Hosts
   #
@@ -193,11 +199,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   #Install docker
   config.vm.provision :shell, :inline => "sudo apt-get update"
-  config.vm.provision :shell, :inline => "sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring -y"
-  config.vm.provision :shell, :inline => "sudo apt-get install curl -y"
-  config.vm.provision :shell, :inline => "curl -s https://get.docker.io/ubuntu/ | sudo sh"
-  config.vm.provision :shell, :inline => "sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker" 
-  config.vm.provision :shell, :inline => "sudo docker run -i -t ubuntu /bin/bash"
+  #config.vm.provision :shell, :inline => "sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring -y"
+  #config.vm.provision :shell, :inline => "sudo apt-get install curl -y"
+  #config.vm.provision :shell, :inline => "curl -s https://get.docker.io/ubuntu/ | sudo sh"
+  #config.vm.provision :shell, :inline => "sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker" 
+  #config.vm.provision :shell, :inline => "sudo docker run -i -t ubuntu /bin/bash"
   #&& sudo apt-get install docker.io && sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker"
 
   #Get Docker Container
