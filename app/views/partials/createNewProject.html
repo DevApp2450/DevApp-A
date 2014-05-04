@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Create New Project</title>    
-  </head>
-  <body ng-app="devAppAeApp">
-    <div class="container" style="height: 400px; width:1000px;">
-    <header>Select Host:</header>
-    <br />
-    <div ng-controller="newProjectCtrl">
-    <select ng-model="option" ng-options="o.name for o in options" class="form-control" style="width: 380px;">
-	</select>
+<head>
+<meta charset="utf-8">
+<title>Create New Project</title>
+
+</head>
+<body ng-app="devAppAeApp">
+	<div class="container" style="height: 400px; width: 1000px;">
+		<header>Create New Project:</header>
+		<br />
+		<div ng-controller="newProjectCtrl"
+			title="Select the host for your new page.">
+			<select ng-model="option" ng-options="o.name for o in options"
+				class="form-control" style="width: 380px;">
+			</select>
+		</div>
+		<br />
+		<button type="button" class="btn btn-primary"
+			ng-click="closeThisDialog()">Select</button>
 	</div>
-  <br />
-    <button type="button" class="btn btn-primary" ng-click="closeThisDialog()">Select</button>
-  </div>
-  </body>
+</body>
 </html>

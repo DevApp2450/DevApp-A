@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
 <title>Migrate to New Host</title>
 </head>
@@ -8,12 +9,11 @@
 	<div class="container" style="height: 400px; width: 1000px;">
 		<header>Migrate To New Host</header>
 		<br />
-		<div ng-controller="migrateCtrl">
+		<div ng-controller="migrateCtrl" title="Select the host to migrate to.">
 			Host:<select ng-model="option" ng-options="o.name for o in options"
-				class="form-control" style="width: 380px;">
-			</select>
-			<br />
-			Repo URL: <input type="text" name="repoURL" ng-model="repo.url" style="width: 300px;">
+				class="form-control" style="width: 300px;">
+			</select> <br /> Repo URL: <input type="text" name="repoURL"
+				ng-model="repo.url" style="width: 300px;">
 		</div>
 		<br />
 		<button type="button" class="btn btn-primary"

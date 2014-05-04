@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Create New Project</title>    
-  </head>
-  <body ng-app="devAppAeApp">
-    <div class="container" style="height: 400px; width:1000px;">
-    <header>DevApp Settings</header>
-    <div>
+<head>
+<meta charset="utf-8">
+<title>Create New Project</title>
+</head>
+<body ng-app="devAppAeApp">
+	<div class="container" style="height: 400px; width: 1000px;">
+		<header>Add New Repository</header>
+		<div></div>
+		<br />
+		<form class="form-horizontal" role="form"
+			ng-controller="initialSetupCtrl">
+			<div class="form-group" title="Email associated with repo host.">
+				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-5">
+					<input type="email" class="Dans-Form  form-control"
+						id="inputEmail3" placeholder="Email">
+				</div>
+			</div>
+
+			<div class="form-group" title="Repo host user name.">
+				<label for="inputUserName" class="col-sm-2 control-label">User
+					Name</label>
+				<div class="col-sm-5">
+					<input type="text" class="Dans-Form  form-control"
+						id="inputPassword3" placeholder="Repo User Name">
+				</div>
+			</div>
+
+			<div class="form-group" title="Repo host password.">
+				<label for="inputPassword" class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-5">
+					<input type="password" class="Dans-Form  form-control"
+						id="inputEmail3" placeholder="Repo Password">
+				</div>
+			</div>
+
+			<div class="form-group" title="Repo host base url.">
+				<label for="inputEmail3" class="col-sm-2 control-label">URL</label>
+				<div class="col-sm-5">
+					<input type="email" class="Dans-Form  form-control"
+						id="inputEmail3" placeholder="Repo URL">
+				</div>
+			</div>
+
+			<div class="form-group" title="Local storage folder.">
+				<label for="inputEmail3" class="col-sm-2 control-label">Folder
+					Location</label>
+				<div class="col-sm-5">
+					<input type="email" class="Dans-Form  form-control"
+						id="inputEmail3" placeholder="Shared Folder Location">
+				</div>
+			</div>
+
+			<button type="button" class="btn btn-primary"
+				ng-submit="saveAndCloseDialog()"style:"floatright">Save</button>
+			<button type="button" class="btn btn-danger"
+				ng-click="closeThisDialog()">Cancel</button>
 	</div>
-  <br />
-<form class="form-horizontal" role="form" ng-controller="initialSetupCtrl">
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-5">
-      <input type="email" class="Dans-Form  form-control" id="inputEmail3" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputUserName" class="col-sm-2 control-label">User Name</label>
-    <div class="col-sm-5">
-      <input type="text" class="Dans-Form  form-control" id="inputPassword3" placeholder="Repo User Name">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-5">
-      <input type="password" class="Dans-Form  form-control" id="inputEmail3" placeholder="Repo Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">URL</label>
-    <div class="col-sm-5">
-      <input type="email" class="Dans-Form  form-control" id="inputEmail3" placeholder="Repo URL">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Folder Location</label>
-    <div class="col-sm-5">
-      <input type="email" class="Dans-Form  form-control" id="inputEmail3" placeholder="Shared Folder Location">
-    </div>
-  </div>
-    <button type="button" class="btn btn-primary" style:"float right" ng-click="save()">Save</button>
-    <button type="button" class="btn btn-danger" ng-click="closeThisDialog()">Cancel</button>
-  </div>
-  </body>
+</body>
 </html>

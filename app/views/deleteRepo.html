@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Delete Repos</title>
+</head>
+<body ng-app="devAppAApp">
+	<div class="container" style="height: 400px; width: 1000px;">
+		<header>Delete Repository</header>
+		<br />
+		<div ng-controller="migrateCtrl"
+			title="Select the repository to delete.">
+			Host:<select ng-model="option" ng-options="o.name for o in options"
+				class="form-control" style="width: 380px;" size=4 multiple>
+			</select>
+		</div>
+		<br />
+		<button type="button" class="btn btn-danger"
+			ng-click="closeThisDialog()">Delete</button>
+	</div>
+</body>
+</html>
