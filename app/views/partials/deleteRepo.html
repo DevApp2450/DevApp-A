@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Delete Repos</title>
+<title>Delete Repository</title>
 </head>
 <body ng-app="devAppAApp">
 	<div class="container" style="height: 400px; width: 1000px;">
-		<header>Delete Repository</header>
+		<header>Delete a Repository</header>
+
+		<form class="form-horizontal" role="form">
+		
+			<div ng-controller="migrateCtrl" class="input-group"
+				title="Select the repository to delete.">
+				<label for="repoSelect" class="control-label">Repository:</label> <br />
+				
+				<select ng-model="option"
+					ng-options="o.name for o in options" class="form-control"
+					style="width: 400px;" size=4 id="repoSelect">
+				</select>
+			</div>
 		<br />
-		<div ng-controller="migrateCtrl"
-			title="Select the repository to delete.">
-			Host:<select ng-model="option" ng-options="o.name for o in options"
-				class="form-control" style="width: 380px;" size=4>
-			</select>
-		</div>
-		<br />
+		</form>
+		
 		<button type="button" class="btn btn-danger"
-			ng-click="closeThisDialog()">Delete</button>
+			ng-click="closeThisDialog()" id="submitButton">Delete</button>
 	</div>
 </body>
 </html>

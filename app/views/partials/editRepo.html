@@ -3,42 +3,43 @@
 <head>
 <meta charset="utf-8">
 <title>Edit Repos</title>
-
-<style>
-#textLabels {
-	width: 250px;
-	position: absolute;
-	left: 160px;
-}
-</style>
-
 </head>
 <body ng-app="devAppAApp">
 	<div class="container" style="height: 400px; width: 1000px;">
 		<header>Edit Repository</header>
-		<br />
-		<div ng-controller="migrateCtrl">
-			<div title="Select the Repo to edit.">
-				Host:<select ng-model="option" ng-options="o.name for o in options"
-					class="form-control" style="width: 380px;" size=4>
-				</select> <br />
 
-				<!--  How do you make it not say http://? -->
-			</div>
-			<div title="Enter a new name for the Repo.">
-				New Repo Name: <input type="text" id="textLabels" name="repoURL"
-					ng-model="repo.url">
-			</div>
-			<div title="Enter a new URL for the Repo.">
-				<p />
+		<form class="form-horizontal" role="form">
 
-				New Repo URL: <input type="text" id="textLabels" name="repoURL"
-					ng-model="repo.url">
+			<div ng-controller="migrateCtrl">
+
+				<div title="Select the Repo to edit.">
+					<label for="repoSelect" class="control-label">Repository:</label><br /> <select
+						ng-model="option" ng-options="o.name for o in options"
+						class="form-control" style="width: 400px;" size=4 id="repoSelect">
+					</select>
+				</div>
+
+				<div title="Enter a new name for the Repo.">
+
+					<!--  How do you make it not say "http://"? -->
+
+					<label for="repoNameInput" class="control-label">New Repo Name:</label> <br /> <input
+						type="text" id="repoNameInput" name="repoURL" ng-model="repo.url"
+						placeholder="Repository Name" class="form-control"
+						style="width: 400px">
+				</div>
+
+				<div title="Enter a new URL for the Repo.">
+					<label for="repoURLInput" class="control-label">New Repo URL:</label><br /> <input
+						type="text" id="repoURLInput" name="repoURL" ng-model="repo.url"
+						placeholder="Repository URL" class="form-control"
+						style="width: 400px">
+				</div>
 			</div>
-		</div>
-		<br />
+		</form>
+
 		<button type="button" class="btn btn-primary"
-			ng-click="closeThisDialog()">Submit</button>
+			ng-click="closeThisDialog()" id="submitButton">Submit</button>
 	</div>
 </body>
 </html>

@@ -8,16 +8,28 @@
 <body ng-app="devAppAeApp">
 	<div class="container" style="height: 400px; width: 1000px;">
 		<header>Migrate To New Host</header>
-		<br />
-		<div ng-controller="migrateCtrl" title="Select the host to migrate to.">
-			Host:<select ng-model="option" ng-options="o.name for o in options"
-				class="form-control" style="width: 300px;">
-			</select> <br /> Repo URL: <input type="text" name="repoURL"
-				ng-model="repo.url" style="width: 300px;">
-		</div>
-		<br />
+
+		<form class="form-horizontal" role="form">
+
+			<div ng-controller="migrateCtrl"
+				title="Select the host to migrate to." class="input-group">
+				<label for="hostInput" class="control-label">Host:</label> <br /> <select
+					ng-model="option" ng-options="o.name for o in options"
+					class="form-control" style="width: 400px;" id="hostInput">
+				</select>
+			</div>
+
+			<div ng-controller="migrateCtrl"
+				title="Select the host to migrate to." class="input-group">
+
+				<label for="repoInput" class="control-label">Repo URL:</label> <br /> <input type="text"
+					name="repoURL" ng-model="repo.url" class="form-control" style="width: 400px;"
+					id="repoInput">
+			</div>
+		</form>
+
 		<button type="button" class="btn btn-primary"
-			ng-click="closeThisDialog()">Select</button>
+			ng-click="closeThisDialog()" id="submitButton">Select</button>
 	</div>
 </body>
 </html>

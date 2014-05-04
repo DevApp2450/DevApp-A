@@ -6,16 +6,20 @@
 </head>
 <body ng-app="devAppAeApp">
 	<div class="container" style="height: 400px; width: 1000px;">
-		<header>Enter Repository Address:</header>
-		<br />
-		<div ng-controller="addExistingCtrl"
-			title="Enter the url for the existing project.">
-			Repo URL: <input type="text" name="repoURL" ng-model="repo.url"
-				style="width: 300px;"> </select>
-		</div>
-		<br />
-		<button type="button" class="btn btn-primary"
-			ng-click="closeThisDialog()">Select</button>
+		<header>Clone Existing Project:</header>
+		<form class="form-horizontal" role="form">
+
+			<div ng-controller="addExistingCtrl" class="input-group"
+				title="Enter the url for the existing project.">
+				<label for="repoURLInput" class="control-label">Repo URL:</label> <br />
+				<input type="text" class="form-control" name="repoURL" id="repoURLInput"
+					ng-model="repo.url" style="width: 400px;"
+					placeholder="Repository URL"> </select>
+			</div>
+
+			<button type="button" class="btn btn-primary"
+				ng-click="closeThisDialog()" id="submitButton">Select</button>
+		</form>
 	</div>
 </body>
 </html>
