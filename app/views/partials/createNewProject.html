@@ -9,11 +9,30 @@
 	<div class="container" style="height: 400px; width: 1000px;">
 		<header>Create New Project:</header>
 		<br />
-		<div ng-controller="newProjectCtrl"
-			title="Select the host for your new page.">
-			<select ng-model="option" ng-options="o.name for o in options"
-				class="form-control" style="width: 380px;">
-			</select>
+		<div ng-controller="newProjectCtrl">
+			<div title="Select the host for your new project">
+				New Project Host:
+				<select ng-model="option" ng-options="o.name for o in options"
+					class="form-control" style="width: 220px;">
+				</select>
+			</div>
+			
+			<br />
+			
+			<div title="Select the repo for your new project">
+				New Project Repo: 
+				<select ng-model="option" ng-options="o.name for o in options"
+					class="form-control" style="width: 220px;">
+				</select>
+			</div>
+			
+			<br />
+			
+			<div title="Enter a name for your new project.">
+				New Project Name:
+				<input type="text" id="textLabels" name="repoURL"
+					ng-model="repo.url">
+			</div>
 		</div>
 		<br />
 		<button type="button" class="btn btn-primary"

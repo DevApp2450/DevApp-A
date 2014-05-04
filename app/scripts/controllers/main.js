@@ -21,4 +21,14 @@ angular.module('devAppAeApp')
 	$scope.migrate = function(){
 		ngDialog.open({ template: 'views/partials/migrate.html'});
 	}
+
+	//Edit Popup
+	$scope.editRepo = function(){
+		ngDialog.open({ template: 'views/partials/editRepo.html'});
+	}
+
+    //Remove Popup
+	$scope.deleteRepo = function(){
+		ngDialog.open({ template: 'views/partials/deleteRepo.html'});
+	}
   });
