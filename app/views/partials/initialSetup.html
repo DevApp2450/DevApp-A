@@ -6,14 +6,13 @@
 
 </head>
 <body ng-app="devAppAeApp">
-	<div class="container" style="height: 400px; width: 1000px;">
+	<div class="container" style="height: 400px; width: 1000px;" ng-controller="initialSetupCtrl">
 		<header>Add New Repository</header>
 
-		<form class="form-horizontal" role="form"
-			ng-controller="initialSetupCtrl">
+		<form class="form-horizontal" role="form">
 
 			<div class="input-group" title="Email associated with repo host.">
-				<label for="inputEmail" class=" control-label">Email</label> <br />
+				<label for="inputEmail" class="control-label">Email</label> <br />
 				<input type="text" class="Dans-Form  form-control " id="inputEmail"
 					ng-model="repoEmail" placeholder="Email" style="width: 400px">
 			</div>
