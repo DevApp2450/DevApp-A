@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('devAppAeApp')
-  .controller('migrateCtrl', function ($scope, ngDialog) {   	
+  .controller('migrateCtrl', function ($scope, ngDialog, $http) { 
+  	var repos = $http.get('/api/getRepos');
+  	console.log(repos);  	
   	 $scope.repo = {url: 'http://'};	 
     	$scope.options = [
 		    {name:'WordPress'},

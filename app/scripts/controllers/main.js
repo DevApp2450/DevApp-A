@@ -31,4 +31,20 @@ angular.module('devAppAeApp')
 	$scope.deleteRepo = function(){
 		ngDialog.open({ template: 'views/partials/deleteRepo.html'});
 	}
+
+	//Pull Popup
+	$scope.pullRepo = function(){
+		ngDialog.open({ template: 'views/partials/pullRepo.html'});
+	}
+
+	//Push Popup
+	$scope.pushRepo = function(){
+		ngDialog.open({ template: 'views/partials/pushRepo.html'});
+	}
+
+	//Commit Popup
+	$scope.commit = function(){
+		ngDialog.open({ template: 'views/partials/commit.html'});
+	}
+
   });
