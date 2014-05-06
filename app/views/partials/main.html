@@ -53,9 +53,9 @@
 										Project</a></li>
 								<li><a href="#" ng-click="migrate()">Migrate Host</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Pull from Repository</a></li>
-								<li><a href="#">Make a Commit</a></li>
-								<li><a href="#">Push to Repository</a></li>
+								<li><a href="#" ng-click="pullRepo()">Pull from Repository</a></li>
+								<li><a href="#" ng-click="commit()">Make a Commit</a></li>
+								<li><a href="#" ng-click="pushRepo()">Push to Repository</a></li>
 							</ul></li>
 
 						<li><a href="#">GitHub Organizaiton</a></li>
@@ -86,13 +86,46 @@
 
 						<div class="panel-content">
 							<div class="btn-group">
-								<button type="button" class="btn btn-default"
-									style="width: 150px">Project1</button>
+
 								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown">
-									<span class="caret"></span> <span class="sr-only">Toggle
-										Dropdown</span>
+									data-toggle="dropdown" style="width: 125px">
+									<table style="width: 100%;">
+										<tr>
+											<td>Project1</td>
+
+											<td><span class="caret"></span></td>
+										</tr>
+									</table>
+									<span class="sr-only"> Toggle Dropdown </span>
 								</button>
+
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Make Active</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Deploy to Stage</a></li>
+									<li><a href="#">Commit</a></li>
+									<li><a href="#">Push</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Open in Browser</a></li>
+								</ul>
+							</div>
+							<br />
+
+							<div class="btn-group">
+
+								<button type="button" class="btn btn-default dropdown-toggle"
+									data-toggle="dropdown" style="width: 125px">
+
+									<table style="width: 100%;">
+										<tr>
+											<td>Project2</td>
+
+											<td><span class="caret"></span></td>
+										</tr>
+									</table>
+									<span class="sr-only"> Toggle Dropdown </span>
+								</button>
+
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">Make Active</a></li>
 									<li class="divider"></li>
@@ -105,31 +138,16 @@
 							</div>
 							<br />
 							<div class="btn-group">
-								<button type="button" class="btn btn-default"
-									style="width: 150px">Project2</button>
 								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown">
-									<span class="caret"></span> <span class="sr-only">Toggle
-										Dropdown</span>
-								</button>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Make Active</a></li>
-									<li class="divider"></li>
-									<li><a href="#">Deploy to Stage</a></li>
-									<li><a href="#">Commit</a></li>
-									<li><a href="#">Push</a></li>
-									<li class="divider"></li>
-									<li><a href="#">Open in Browser</a></li>
-								</ul>
-							</div>
-							<br />
-							<div class="btn-group">
-								<button type="button" class="btn btn-default"
-									style="width: 150px">Project3</button>
-								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown">
-									<span class="caret"></span> <span class="sr-only">Toggle
-										Dropdown</span>
+									data-toggle="dropdown" style="width: 125px">
+									<table style="width: 100%;">
+										<tr>
+											<td>Project3</td>
+
+											<td><span class="caret"></span></td>
+										</tr>
+									</table>
+									<span class="sr-only"> Toggle Dropdown </span>
 								</button>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">Make Active</a></li>
@@ -144,9 +162,14 @@
 
 							<div class="btn-group">
 								<button type="button" class="btn btn-default"
-									style="width: 136px" disabled>Project 4</button>
-								<button type="button" class="btn btn-default" disabled>
-									<img src="images/busySpinner.gif">
+									style="width: 125px" disabled>
+									<table style="width: 100%;">
+										<tr>
+											<td>Project4</td>
+
+											<td><img src="images/busySpinner.gif"></td>
+										</tr>
+									</table>
 								</button>
 							</div>
 
@@ -169,12 +192,16 @@
 
 						<div class="panel-content">
 							<div class="btn-group">
-								<button type="button" class="btn btn-default"
-									style="width: 150px">Project2</button>
 								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown">
-									<span class="caret"></span> <span class="sr-only">Toggle
-										Dropdown</span>
+									data-toggle="dropdown" style="width: 125px">
+									<table style="width: 100%;">
+										<tr>
+											<td>Project2</td>
+
+											<td><span class="caret"></span></td>
+										</tr>
+									</table>
+									<span class="sr-only">Toggle Dropdown</span>
 								</button>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">Rollback to Dev</a></li>
@@ -202,12 +229,16 @@
 
 						<div class="panel-content">
 							<div class="btn-group">
-								<button type="button" class="btn btn-default"
-									style="width: 150px">Project2</button>
 								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown">
-									<span class="caret"></span> <span class="sr-only">Toggle
-										Dropdown</span>
+									data-toggle="dropdown" style="width: 125px">
+									<table style="width: 100%;">
+										<tr>
+											<td>Project2</td>
+
+											<td><span class="caret"></span></td>
+										</tr>
+									</table>
+									<span class="sr-only">Toggle Dropdown</span>
 								</button>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">Rollback to Dev</a></li>
@@ -277,6 +308,6 @@
 	<script src="../scripts/controllers/newProject.js"></script>
 	<script src="scripts/controllers/addExisting.js"></script>
 	<script src="scripts/controllers/initialSetup.js"></script>
-	<script src="scripts/controllers/migrate.js"></script>
+
 	<!-- endbuild -->
 </body>

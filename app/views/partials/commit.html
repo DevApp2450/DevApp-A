@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Edit Repos</title>
+</head>
+<body ng-app="devAppAApp">
+	<div class="container" style="height: 400px; width: 1000px;">
+		<header>Commit</header>
+
+		<form class="form-horizontal" role="form">
+
+				<div title="Enter a new URL for the Repo.">
+					<label for="repoURLInput" class="control-label">Enter Comment:</label><br /> <textarea
+						type="text" id="repoURLInput" name="repoURL" ng-model="repo.url"
+						placeholder="Repository URL" class="form-control"
+						style="width: 400px" size=4></textarea>
+				</div>
+			</div>
+		</form>
+
+		<button type="button" class="btn btn-primary"
+			ng-click="closeThisDialog()" id="submitButton">Commit</button>
+	</div>
+</body>
+</html>

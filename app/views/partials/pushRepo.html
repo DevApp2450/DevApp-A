@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Create New Project</title>
+</head>
+<body ng-app="devAppAeApp">
+	<div class="container" style="height: 400px; width: 1000px;">
+		<header>Push to Repository:</header>
+		<form class="form-horizontal" role="form">
+
+			<label for="repoSelect" class="control-label">Repository:</label> 
+			<div ng-controller="pullRepoCtrl"
+				title="Select the repository for your new page."
+				style="width: 400px;" class="input-group">
+				<select
+					ng-model="repoOption" ng-options="o.name for o in repoOptions"
+					class="form-control" id="repoSelect">
+				</select>
+			</div>
+
+
+			<label for="hostSelect" class="control-label">Branch:</label>
+			<div ng-controller="pullRepoCtrl"
+				title="Select the branch to pull from." style="width: 400px;"
+				class="input-group">
+				<select ng-model="option" ng-options="o.name for o in options"
+					class="form-control" id="hostSelect">
+				</select>
+			</div>
+			
+
+			<div class="input-group" title="Name for new page"
+				style="width: 400px;">
+				<label for="projName" class="control-label">Tag
+				(Optional):</label>
+				<input type="text" class="Dans-Form  form-control" id="projName"
+					placeholder="Tag Name">
+			</div>
+
+		</form>
+		<button type="button" class="btn btn-primary"
+			ng-click="closeThisDialog()" id="submitButton">Push</button>
+	</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('devAppAeApp')
-  .controller('migrateCtrl', function ($scope, ngDialog) {   	
+  .controller('deleteRepoCtrl', function ($scope, ngDialog) {   	
   	 $scope.repo = {url: 'http://'};	 
     	$scope.options = [
 		    {name:'Repo1'},
