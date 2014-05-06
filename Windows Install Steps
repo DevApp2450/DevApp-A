@@ -1,0 +1,20 @@
+Windows Install Steps:
+
+If a command doesn't work, restart your CMD Prompt or log out and back in, as env variables need to update.  You may need to set some env variables yourself.
+
+If git isn't already installed, install it: 
+Select the command prompt option: http://git-scm.com/download/win 
+Optional but nice: https://windows.github.com/
+you should be able to open cmd prompt and type "git --version"
+
+Install nodejs: http://nodejs.org
+
+Clone DevApp-A with Git: https://github.com/DevApp2450/DevApp-A
+
+Navigate to DevApp folder
+
+npm install -d
+npm install -g bower
+bower install
+npm install -g grunt-cli
+grunt serve
