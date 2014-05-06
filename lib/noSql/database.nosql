@@ -1,1 +1,8 @@
-{"Email":"test@gmail.com","Username":"testuser","Password":"Password","Url":"http://www.google.com","Folder":"C:\\Test\\testing"}
+{"repoId":"0","repoEmail":"test@gmail.com","repoUsername":"testuser","repoPassword":"Password","repoUrl":"http://www.google.com","repoFolder":"C:\\Test\\testing"}
+{"repoId":"1","repoEmail":"email@gmail.com","repoUsername":"username","repoPassword":"pass","repoUrl":"http://www.google.com","repoFolder":"C:\\Test\\testing"}
+{"repoId":"2","repoEmail":"email@gmail.com","repoUsername":"username","repoPassword":"pass","repoUrl":"http://www.google.com","repoFolder":"C:\\Test\\testing"}
+{"repoId":"3","repoEmail":"test@email.com","repoUsername":"username","repoPassword":"pass","repoUrl":"http://www.github.com","repoFolder":"C:\\Test\\"}
+{"repoId":"4","repoEmail":"test@email.com","repoUsername":"username","repoPassword":"pass","repoUrl":"http://www.github.com","repoFolder":"C:\\Test\\"}
+{"repoId":"5","repoEmail":"test@email.com","repoUsername":"username","repoPassword":"pass","repoUrl":"http://www.github.com","repoFolder":"C:\\Test\\"}
+{"repoId":"6","repoEmail":"test1@test.com","repoUsername":"username1","repoPassword":"password1","repoUrl":"http://www.github1.com","repoFolder":"C:\\Users\\test1\\"}
+{"repoId":"7","repoEmail":"test1@test.com","repoUsername":"username1","repoPassword":"password1","repoUrl":"http://www.github1.com","repoFolder":"C:\\Users\\test1\\"}
