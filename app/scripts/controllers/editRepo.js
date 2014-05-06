@@ -5,24 +5,26 @@ var repos = [];
 angular.module('devAppAeApp')
   .controller('editRepoCtrl', function ($scope, ngDialog, $http) {   	
   	//get repos 
+    $scope.options = [];
+
   	$http.get('/api/getRepos').success(function(returnedRepo) {
-      console.log(returnedRepo);
-      repos = returnedRepo;
+      	console.log(returnedRepo);
+      	repos = returnedRepo;
+      	console.log('reposLength: ' + repos.length);
+    	for(var i = 0; i < repos.length; i++) {
+			var optText = {name: repos[i].repoUsername + ': ' + repos[i].repoUrl, id: repos[i].repoId};
+			console.log(optText);
+			$scope.options[i] = optText;
+			//$scope.options.push(optText);
+    	}
+    	$scope.option = $scope.options[0];
     });
 
   	//load up dropbox
-    $scope.options = [];
-    console.log('reposLength: ' + repos.length);
-    for(var i = 0; i < repos.length; i++) {
-    	var optText = {name: repos[i].repoUsername + ': ' + repos[i].repoUrl, id: repos[i].repoId};
-    	console.log(optText);
-    	$scope.options.push(optText);
-    }
 		  //   {name: repos[]},
 		  //   {name:'Another Repo'},
 		  //   {name:'Guess what? Yet another Repo!'}
 		  // ];
-	$scope.option = $scope.options[0]; //Github
 
   	//prepop fields w/ option selected in dropbox
     //$http.get('/api/getRepos').success(function(returnedRepo) {
