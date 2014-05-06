@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('devAppAeApp')
-  .controller('MainCtrl', function ($scope, ngDialog) {
+  .controller('MainCtrl', function ($scope, ngDialog, $http) {
   	//Initial Setup Popup
   	$scope.initialSetup = function(){
   		ngDialog.open({ template: 'views/partials/initialSetup.html'});
@@ -45,6 +45,11 @@ angular.module('devAppAeApp')
 	//Commit Popup
 	$scope.commit = function(){
 		ngDialog.open({ template: 'views/partials/commit.html'});
+	}
+
+	$scope.openBrower = function(){
+		$http.get('/api/browerOpen').success(function() {
+	    });
 	}
 
   });
