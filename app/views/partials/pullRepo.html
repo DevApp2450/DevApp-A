@@ -5,7 +5,7 @@
 <title>Create New Project</title>
 </head>
 <body ng-app="devAppAeApp">
-	<div class="container" style="height: 400px; width: 1000px;">
+	<div class="container" style="height: 400px; width: 1000px;" ng-controller="pullRepoCtrl">
 		<header>Pull From Repository:</header>
 		<form class="form-horizontal" role="form">
 
@@ -39,7 +39,7 @@
 
 		</form>
 		<button type="button" class="btn btn-primary"
-			ng-click="closeThisDialog()" id="submitButton">Pull</button>
+			ng-click="pullrepo()" id="submitButton">Pull</button>
 	</div>
 </body>
 </html>

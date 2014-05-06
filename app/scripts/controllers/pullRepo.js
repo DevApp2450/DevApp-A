@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('devAppAeApp')
-  .controller('pullRepoCtrl', function ($scope, ngDialog) { 
+  .controller('pullRepoCtrl', function ($scope, ngDialog, $http) { 
 		  $scope.repoOptions = [
 		    {name:'Repo 1'},
 		    {name:'Repo 2'},
@@ -35,7 +35,9 @@ angular.module('devAppAeApp')
 		  ];
 		  $scope.tagOption = $scope.tagOptions[0]; //Repo 1
 
-		  $scope.closeThisDialog = function() {
+		  $scope.pullrepo = function() {
+		  	$http.get('/api/gitpull').success(function() {
+	    	});
 		  	ngDialog.close();
 		  }	
   });
